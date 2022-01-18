@@ -1,12 +1,13 @@
 // SPDX-License-Identifier: Unlicense
-pragma solidity 0.8.10;
+pragma solidity ^0.8.4;
 
-import "ds-test/test.sol";
+import {BaseTest, console} from "./base/BaseTest.sol";
 
-contract ContractTest is DSTest {
+contract ContractTest is BaseTest {
     function setUp() public {}
 
     function testExample() public {
+        console.log("Hello world!");
         assertTrue(true);
     }
 }
