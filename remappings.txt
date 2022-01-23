@@ -1,0 +1,3 @@
+solmate/=/Users/zefram/Documents/GitHub/foundry-template/lib/solmate/src/
+weird-erc20/=/Users/zefram/Documents/GitHub/foundry-template/lib/solmate/lib/weird-erc20/src/
+ds-test/=/Users/zefram/Documents/GitHub/foundry-template/lib/ds-test/src/
