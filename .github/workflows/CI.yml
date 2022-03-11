@@ -1,4 +1,5 @@
 name: CI
+
 on:
   push:
     branches:
@@ -19,4 +20,4 @@ jobs:
           version: nightly
 
       - name: Run tests
-        run: make test
+        run: FOUNDRY_PROFILE=ci make test
