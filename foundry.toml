@@ -5,11 +5,11 @@ optimizer = true
 optimizer_runs = 1000000
 remappings = [
   "ds-test/=lib/ds-test/src/",
-  "solmate/=lib/solmate/src/",
-  "weird-erc20/=lib/solmate/lib/weird-erc20/src/"
+  "solmate/=lib/solmate/src/"
 ]
 verbosity = 1
 
 # Extreme Fuzzing CI Profile :P
 [ci]
 fuzz_runs = 100_000
+verbosity = 4
