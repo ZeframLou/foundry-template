@@ -5,7 +5,8 @@ optimizer = true
 optimizer_runs = 1000000
 remappings = [
   "ds-test/=lib/ds-test/src/",
-  "solmate/=lib/solmate/src/"
+  "solmate/=lib/solmate/src/",
+  "forge-std/=lib/forge-std/src/"
 ]
 verbosity = 1
 
