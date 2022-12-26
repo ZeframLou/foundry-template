@@ -23,17 +23,17 @@ This project uses [Foundry](https://github.com/gakonst/foundry) as the developme
 ### Dependencies
 
 ```
-make update
+forge install
 ```
 
 ### Compilation
 
 ```
-make build
+forge build
 ```
 
 ### Testing
 
 ```
-make test
+forge test
 ```

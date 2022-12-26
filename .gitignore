@@ -1,3 +1,13 @@
+# Compiler files
 cache/
 out/
-.vscode/
+
+# Ignores development broadcast logs
+!/broadcast
+/broadcast/*/31337/
+/broadcast/**/dry-run/
+
+# Dotenv file
+.env
+
+.vscode
