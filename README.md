@@ -37,3 +37,19 @@ forge build
 ```
 forge test
 ```
+
+### Contract deployment
+
+Please create a `.env` file before deployment. An example can be found in `.env.example`.
+
+#### Dryrun
+
+```
+forge script script/Deploy.s.sol -f [network]
+```
+
+### Live
+
+```
+forge script script/Deploy.s.sol --network [network] --verify
+```
