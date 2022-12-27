@@ -51,5 +51,5 @@ forge script script/Deploy.s.sol -f [network]
 ### Live
 
 ```
-forge script script/Deploy.s.sol --network [network] --verify
+forge script script/Deploy.s.sol -f [network] --verify --broadcast
 ```
