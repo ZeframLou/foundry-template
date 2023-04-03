@@ -16,8 +16,7 @@ contract DeployScript is CREATE3Script {
 
         c = Contract(
             create3.deploy(
-                getCreate3ContractSalt("Contract"),
-                bytes.concat(type(Contract).creationCode, abi.encode(param))
+                getCreate3ContractSalt("Contract"), bytes.concat(type(Contract).creationCode, abi.encode(param))
             )
         );
 
