@@ -4,12 +4,6 @@ This is a template for a Foundry project.
 
 ## Installation
 
-To install with [DappTools](https://github.com/dapphub/dapptools):
-
-```
-dapp install [user]/[repo]
-```
-
 To install with [Foundry](https://github.com/gakonst/foundry):
 
 ```
