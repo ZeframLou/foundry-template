@@ -21,7 +21,23 @@ abstract contract CREATE3Script is Script {
         return create3.getDeployed(deployer, getCreate3ContractSalt(name));
     }
 
+    function getCreate3Contract(string memory name, string memory _version) internal view virtual returns (address) {
+        uint256 deployerPrivateKey = uint256(vm.envBytes32("PRIVATE_KEY"));
+        address deployer = vm.addr(deployerPrivateKey);
+
+        return create3.getDeployed(deployer, getCreate3ContractSalt(name, _version));
+    }
+
     function getCreate3ContractSalt(string memory name) internal view virtual returns (bytes32) {
         return keccak256(bytes(string.concat(name, "-v", version)));
+    }
+
+    function getCreate3ContractSalt(string memory name, string memory _version)
+        internal
+        view
+        virtual
+        returns (bytes32)
+    {
+        return keccak256(bytes(string.concat(name, "-v", _version)));
     }
 }
