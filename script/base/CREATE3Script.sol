@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0
 pragma solidity ^0.8.13;
 
-import {CREATE3Factory} from "create3-factory/src/CREATE3Factory.sol";
+import {CREATE3Factory} from "create3-factory/CREATE3Factory.sol";
 
 import "forge-std/Script.sol";
 
@@ -15,15 +15,13 @@ abstract contract CREATE3Script is Script {
     }
 
     function getCreate3Contract(string memory name) internal view virtual returns (address) {
-        uint256 deployerPrivateKey = uint256(vm.envBytes32("PRIVATE_KEY"));
-        address deployer = vm.addr(deployerPrivateKey);
+        address deployer = vm.envAddress("DEPLOYER");
 
         return create3.getDeployed(deployer, getCreate3ContractSalt(name));
     }
 
     function getCreate3Contract(string memory name, string memory _version) internal view virtual returns (address) {
-        uint256 deployerPrivateKey = uint256(vm.envBytes32("PRIVATE_KEY"));
-        address deployer = vm.addr(deployerPrivateKey);
+        address deployer = vm.envAddress("DEPLOYER");
 
         return create3.getDeployed(deployer, getCreate3ContractSalt(name, _version));
     }
@@ -39,5 +37,17 @@ abstract contract CREATE3Script is Script {
         returns (bytes32)
     {
         return keccak256(bytes(string.concat(name, "-v", _version)));
+    }
+
+    function getCreate3SaltFromEnv(string memory name) internal view virtual returns (bytes32) {
+        bytes32 salt = vm.envBytes32(string.concat("SALT_", name));
+        return salt;
+    }
+
+    function getCreate3ContractFromEnvSalt(string memory name) internal view virtual returns (address) {
+        address deployer = vm.envAddress("DEPLOYER");
+        bytes32 salt = vm.envBytes32(string.concat("SALT_", name));
+
+        return create3.getDeployed(deployer, salt);
     }
 }

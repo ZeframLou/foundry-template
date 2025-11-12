@@ -1,0 +1,17 @@
+{
+  "lib/create3-factory": {
+    "rev": "6b834ad617902314521684e40e2f1ad73eb7ed13"
+  },
+  "lib/forge-std": {
+    "rev": "bf6606142994b1e47e2882ce0cd477c020d77623"
+  },
+  "lib/solady": {
+    "tag": {
+      "name": "v0.1.26",
+      "rev": "acd959aa4bd04720d640bf4e6a5c71037510cc4b"
+    }
+  },
+  "lib/solmate": {
+    "rev": "97bdb2003b70382996a79a406813f76417b1cf90"
+  }
+}
